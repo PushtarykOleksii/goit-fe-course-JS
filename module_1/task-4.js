@@ -23,6 +23,9 @@ if (order === null) {
   );
 } else if (totalPrice <= credits) {
   console.log(
-    `You have bought ${order} Droids, you have left ${credits} credits on your account`
+    `You have bought ${order} Droids, your account has only ${credits} credits now )))!`
   );
+} 
+else if (Number.isNaN(+order)) {
+  console.log(`Enter a Number, not a Leter. Stupid You!!`);
 }

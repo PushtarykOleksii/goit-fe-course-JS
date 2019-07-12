@@ -9,11 +9,15 @@
 // После всех проверок вывести в alert значение переменной message.
 // const ADMIN_PASSWORD = 'jqueryismyjam';
 // let message;
-const ADMIN_PASSWORD = 'qwe';
+
+const ADMIN_PASSWORD = "jqueryismyjam";
 let message;
-
-const user = prompt('запрашивается пароль');
-
-if (user ===null) {
-    message = 'Отменено пользователем!';
-} else if ()
+message = prompt(`Enter your password!`);
+if (message === null) {
+  console.log(`'Declined by the user!'`);
+} else if (message === ADMIN_PASSWORD) {
+  console.log(`Wellcome!`);
+} else {
+  console.log(`Access is restricted, wrong password`);
+}
+alert(message);

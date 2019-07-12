@@ -10,14 +10,14 @@
 // const ADMIN_PASSWORD = 'jqueryismyjam';
 // let message;
 
-const ADMIN_PASSWORD = "jqueryismyjam";
-let message;
-message = prompt(`Enter your password!`);
-if (message === null) {
-  console.log(`'Declined by the user!'`);
-} else if (message === ADMIN_PASSWORD) {
-  console.log(`Wellcome!`);
-} else {
-  console.log(`Access is restricted, wrong password`);
-}
-alert(message);
+// const ADMIN_PASSWORD = "jqueryismyjam";
+// let message;
+// message = prompt(`Enter your password!`);
+// if (message === null) {
+//   console.log(`'Declined by the user!'`);
+// } else if (message === ADMIN_PASSWORD) {
+//   console.log(`Wellcome!`);
+// } else {
+//   console.log(`Access is restricted, wrong password`);
+// }
+// alert(message);

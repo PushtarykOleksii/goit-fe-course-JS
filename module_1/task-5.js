@@ -12,50 +12,50 @@
 // // Индия - 80 кредитов
 // // Ямайка - 120 кредитов
 
-const CHINA = "CHINA";
-const CHILI = "CHILI";
-const AUSTRALIA = "AUSTRALIA";
-const INDIA = "INDIA";
-const JAMAICA = "JAMAICA";
+// const CHINA = "CHINA";
+// const CHILI = "CHILI";
+// const AUSTRALIA = "AUSTRALIA";
+// const INDIA = "INDIA";
+// const JAMAICA = "JAMAICA";
 
-const priceChina = 100;
-const priceChili = 250;
-const priceAustralia = 170;
-const priceIndia = 80;
-const priceJamaica = 120;
+// const priceChina = 100;
+// const priceChili = 250;
+// const priceAustralia = 170;
+// const priceIndia = 80;
+// const priceJamaica = 120;
 
-const promptLabel = `Please, choose a country!:
- ${CHINA}, ${CHILI}, ${AUSTRALIA}, ${INDIA}, ${JAMAICA}.`;
+// const promptLabel = `Please, choose a country!:
+//  ${CHINA}, ${CHILI}, ${AUSTRALIA}, ${INDIA}, ${JAMAICA}.`;
 
-let userChoise = prompt(promptLabel);
-let message;
+// let userChoise = prompt(promptLabel);
+// let message;
 
-if (userChoise === null) {
-  message = "See you later!";
-} else {
-  switch (userChoise.toUpperCase()) {
-    case CHINA:
-      message = `'Dellivery to your country cost ${priceChina} credits'`;
-      break;
-    case CHILI:
-      message = `'Dellivery to your country cost ${priceChili} credits'`;
-      break;
-    case AUSTRALIA:
-      message = `'Dellivery to your country cost ${priceAustralia} credits'`;
-      break;
-    case INDIA:
-      message = `'Dellivery to your country cost ${priceIndia} credits'`;
-      break;
-    case JAMAICA:
-      message = `'Dellivery to your country cost ${priceJamaica} credits'`;
-      break;
+// if (userChoise === null) {
+//   message = "See you later!";
+// } else {
+//   switch (userChoise.toUpperCase()) {
+//     case CHINA:
+//       message = `'Dellivery to your country cost ${priceChina} credits'`;
+//       break;
+//     case CHILI:
+//       message = `'Dellivery to your country cost ${priceChili} credits'`;
+//       break;
+//     case AUSTRALIA:
+//       message = `'Dellivery to your country cost ${priceAustralia} credits'`;
+//       break;
+//     case INDIA:
+//       message = `'Dellivery to your country cost ${priceIndia} credits'`;
+//       break;
+//     case JAMAICA:
+//       message = `'Dellivery to your country cost ${priceJamaica} credits'`;
+//       break;
 
-    default:
-      message = "Please, choose a country!";
-  }
-}
+//     default:
+//       message = "Please, choose a country!";
+//   }
+// }
 
-console.log(message);
+// console.log(message);
 
  
 

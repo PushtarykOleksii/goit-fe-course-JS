@@ -12,20 +12,20 @@
 
 // let credits = 23580;
 // const pricePerDroid = 3000;
-// let order = prompt(`How many Droids do you want to buy?`);
+// let order = prompt('How many Droids do you want to buy?');
 // let totalPrice = order * pricePerDroid;
-// credits = credits - totalPrice;
+// let leftCredits = credits - totalPrice;
 // if (order === null) {
-//   console.log(`'Declined by the User!'`);
+//   console.log('Declined by the User!');
 // } else if (totalPrice > credits) {
 //   console.log(
-//     `Not enough credits on your account, total prise is ${totalPrice}!!!`
+//     `Not enough credits on your account, total prise is ${totalPrice}!`
 //   );
 // } else if (totalPrice <= credits) {
 //   console.log(
-//     `You have bought ${order} Droids, your account has only ${credits} credits now )))!`
+//     `You have bought ${order} Droids, your account has ${leftCredits} credits now!`
 //   );
 // } 
 // else if (Number.isNaN(+order)) {
-//   console.log(`Enter a Number, not a Leter. Stupid You!!`);
+//   console.log('Enter a Number, not a Leter!');
 // }

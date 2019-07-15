@@ -31,31 +31,30 @@
 // let message;
 
 // if (userChoise === null) {
-//   message = "See you later!";
+//   message = "Decline by the user!";
 // } else {
 //   switch (userChoise.toUpperCase()) {
 //     case CHINA:
-//       message = `'Dellivery to your country cost ${priceChina} credits'`;
+//       message = `'Dellivery to ${CHINA} cost ${priceChina} credits'`;
 //       break;
 //     case CHILI:
-//       message = `'Dellivery to your country cost ${priceChili} credits'`;
+//       message = `'Dellivery to ${CHILI} cost ${priceChili} credits'`;
 //       break;
 //     case AUSTRALIA:
-//       message = `'Dellivery to your country cost ${priceAustralia} credits'`;
+//       message = `'Dellivery to ${AUSTRALIA} cost ${priceAustralia} credits'`;
 //       break;
 //     case INDIA:
-//       message = `'Dellivery to your country cost ${priceIndia} credits'`;
+//       message = `'Dellivery to ${INDIA} cost ${priceIndia} credits'`;
 //       break;
 //     case JAMAICA:
-//       message = `'Dellivery to your country cost ${priceJamaica} credits'`;
+//       message = `'Dellivery to ${JAMAICA} cost ${priceJamaica} credits'`;
 //       break;
 
 //     default:
-//       message = "Please, choose a country!";
+//       message = 'In your contry dellivery is not available!';
 //   }
 // }
-
-// console.log(message);
+// alert(message);
 
  
 

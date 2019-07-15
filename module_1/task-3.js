@@ -12,12 +12,12 @@
 
 // const ADMIN_PASSWORD = "jqueryismyjam";
 // let message;
-// message = prompt(`Enter your password!`);
+// message = prompt('Enter your password!');
 // if (message === null) {
-//   console.log(`'Declined by the user!'`);
+//     message = 'Declined by the user!';
 // } else if (message === ADMIN_PASSWORD) {
-//   console.log(`Wellcome!`);
+//     message = 'Wellcome!';
 // } else {
-//   console.log(`Access is restricted, wrong password`);
+//     message = 'Access is restricted, wrong password';
 // }
 // alert(message);

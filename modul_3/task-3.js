@@ -1,23 +1,44 @@
 // Задание 3
-// Напиши скрипт имитирующий авторизацию администратора в панели управления.
+// Напиши функцию findBestEmployee(employees), которая принимает объект сотрудников и возвращает имя самого продуктивного (который выполнил больше всех задач). Сотрудники и кол-во выполненых задач содержатся как свойства объекта в формате "имя":"кол-во задач".
 
-// Есть переменная message в которую будет записано сообщение о результате. При загрузке страницы у посетителя запрашивается пароль через prompt:
+// Вызовы функции для проверки работоспособности твоей реализации.
 
-// Если нажали Cancel, записать в message строку 'Отменено пользователем!'
-// В протовном случае, если введен пароль который совпадает со значением константы ADMIN_PASSWORD, записать в message строку 'Добро пожаловать!'
-// В противном случае, то есть если ни одно из предыдущих условий не выполнилось, записать в message строку 'Доступ запрещен, неверный пароль!'
-// После всех проверок вывести в alert значение переменной message.
-// const ADMIN_PASSWORD = 'jqueryismyjam';
-// let message;
+// ======================
 
-// const ADMIN_PASSWORD = "jqueryismyjam";
-// let message;
-// message = prompt('Enter your password!');
-// if (message === null) {
-//     message = 'Declined by the user!';
-// } else if (message === ADMIN_PASSWORD) {
-//     message = 'Wellcome!';
-// } else {
-//     message = 'Access is restricted, wrong password';
+// function findBestEmployee(employees) {
+//   let name;
+//   let max = 0;
+//   for (const val in employees) {
+//     if (employees[val] > max) {
+//       max = employees[val];
+//       name = val;
+//     }
+//   }
+//   return name;
 // }
-// alert(message);
+
+// console.log(
+//   findBestEmployee({
+//     ann: 29,
+//     david: 35,
+//     helen: 1,
+//     lorence: 99
+//   })
+// ); // lorence
+
+// console.log(
+//   findBestEmployee({
+//     poly: 12,
+//     mango: 17,
+//     ajax: 4
+//   })
+// ); // mango
+
+// console.log(
+//   findBestEmployee({
+//     lux: 147,
+//     david: 21,
+//     kiwi: 19,
+//     chelsy: 38
+//   })
+// ); // lux

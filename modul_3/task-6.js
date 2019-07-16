@@ -1,24 +1,25 @@
-// Напиши скрипт который просит посетителя ввести число в prompt до тех пор, пока посетитель на нажмет Cancel и каждый раз добавляет введенное значение к общей сумме.
+// Задание 6
+// Напиши функцию calculateTotalPrice(arr, productName), которая получает массив объектов и имя продукта (значение свойства name). Возвращает общую стоимость продукта (цена * количество).
 
-// При загрузке страницы пользователю предлагается в prompt ввести число. Ввод добавляется к значению переменной total.
-// Операция ввода числа продолжается до тех пор, пока пользователь не нажмет кнопку Cancel в prompt.
-// После того как пользователь прекратил ввод нажав кнопку Cancel, показать alert со строкой 'Общая сумма чисел равна [сумма]'.
-// !!!!!// bell Делать проверку того, что пользователь ввел именно число, а не произвольный набор символов, не нужно. Если хочешь, в случае некорректного ввода, показывай alert с текстом 'Было введено не число, попробуйте еще раз', при этом результат prompt плюсовать к общей сумме не нужно, после чего снова пользователю предлагается ввести число в prompt.
+// Вызовы функции для проверки работоспособности твоей реализации.
+// ==================================
 
-// let input;
-// let total = 0;
+const products = [
+  { name: "Радар", price: 1300, quantity: 4 },
+  { name: "Сканер", price: 2700, quantity: 3 },
+  { name: "Дроид", price: 400, quantity: 7 },
+  { name: "Захват", price: 1200, quantity: 2 }
+];
 
-// while (true) {
-//     let message = prompt('Enter a number, Please');
-    
-//     if (Number.isNaN(+message)){
-//         alert('You entered not a number, try one more time');
-//         continue
-//     }
-//     else if(message === null) {
-//         alert(total);
-//         break;
-//     }
-//     total = total + Number(message);
-// }
+function calculateTotalPrice(arr, productName) {
+  for (const prod of arr) {
+    if (prod.name === productName) {
+      let total = prod.price * prod.quantity;
+      return total;
+    }
+  }
+}
+console.log(calculateTotalPrice(products, "Радар")); // 5200
+
+console.log(calculateTotalPrice(products, "Дроид")); // 2800
 

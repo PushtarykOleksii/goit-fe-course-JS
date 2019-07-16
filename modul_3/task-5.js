@@ -1,60 +1,39 @@
-// // Пользователь может оформить доставку товара к себе в страну, указав ее при посещении страницы в prompt. Учти, пользователь может ввести имя страны не только буквами нижнего регистра, а к примеру 'кИтАЙ'.
+// Задание 5
+// Напиши функцию getAllPropValues(arr, prop), которая получает массив объектов и имя ключа. Возвращает массив значений определенного поля prop из каждого объекта в массиве.
 
-// // Напиши скрипт который выводит сообщение о стоимости доставки в указанную страну. Обязательно используй switch. Формат сообщения: 'Доставка в [страна] будет стоить [цена] кредитов'.
+// Вызовы функции для проверки работоспособности твоей реализации.
 
-// // Но доставка есть не везде, если указанной страны нет в списке, то выводи в alert сообщение 'В вашей стране доставка не доступна'.
+// =============================
 
-// // Ниже приведен список стран и стоимость доставки.
+const products = [
+  { name: "Радар",
+    price: 1300,
+    quantity: 4 },
 
-// // Китай - 100 кредитов
-// // Чили - 250 кредитов
-// // Австралия - 170 кредитов
-// // Индия - 80 кредитов
-// // Ямайка - 120 кредитов
+  { name: "Сканер", 
+    price: 2700, 
+    quantity: 3 },
 
-// const CHINA = "CHINA";
-// const CHILI = "CHILI";
-// const AUSTRALIA = "AUSTRALIA";
-// const INDIA = "INDIA";
-// const JAMAICA = "JAMAICA";
+  { name: "Дроид",
+    price: 400,
+    quantity: 7 },
 
-// const priceChina = 100;
-// const priceChili = 250;
-// const priceAustralia = 170;
-// const priceIndia = 80;
-// const priceJamaica = 120;
+  { name: "Захват", 
+    price: 1200, 
+    quantity: 2 }
+];
 
-// const promptLabel = `Please, choose a country!:
-//  ${CHINA}, ${CHILI}, ${AUSTRALIA}, ${INDIA}, ${JAMAICA}.`;
+function getAllPropValues(arr, prop) {
+  const newArr = [];
+  for (const key of arr) {
+    if (Object.keys(key).includes(prop)) {
+      newArr.push(key[prop]);
+    }
+  }
+  return newArr;
+}
+console.log(getAllPropValues(products, "name")); // ['Радар', 'Сканер', 'Дроид', 'Захват']
 
-// let userChoise = prompt(promptLabel);
-// let message;
+console.log(getAllPropValues(products, "quantity")); // [4, 3, 7, 2]
 
-// if (userChoise === null) {
-//   message = "Decline by the user!";
-// } else {
-//   switch (userChoise.toUpperCase()) {
-//     case CHINA:
-//       message = `'Dellivery to ${CHINA} cost ${priceChina} credits'`;
-//       break;
-//     case CHILI:
-//       message = `'Dellivery to ${CHILI} cost ${priceChili} credits'`;
-//       break;
-//     case AUSTRALIA:
-//       message = `'Dellivery to ${AUSTRALIA} cost ${priceAustralia} credits'`;
-//       break;
-//     case INDIA:
-//       message = `'Dellivery to ${INDIA} cost ${priceIndia} credits'`;
-//       break;
-//     case JAMAICA:
-//       message = `'Dellivery to ${JAMAICA} cost ${priceJamaica} credits'`;
-//       break;
-
-//     default:
-//       message = 'In your contry dellivery is not available!';
-//   }
-// }
-// alert(message);
-
- 
-
+console.log(getAllPropValues(products, "category")); // []

@@ -22,6 +22,8 @@
 // const insertBefore = "Jay";
 // console.log(users); //  ["Lux", "Poly", "Kong", "Jay", "Kiwi"]
 
+// =======================
+
 const users =["Mango", "Poly", "Ajax", "Chelsey"];
 console.log(users.shift());
 console.log(users);

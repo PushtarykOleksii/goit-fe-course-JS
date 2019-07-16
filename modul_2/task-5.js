@@ -18,27 +18,25 @@
 //     'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
 //   ),
 // );
-// // вернется форматированная строка
+// вернется форматированная строка
 
-// const formatString = function(string){
+// ===============
 
-//     const stringLength = string.length;
-//     const standartLength = 40;
-//     console.log('String Length :', stringLength);
-//       if (stringLength <=standartLength) {
-//           return string;
-//       } else {
-//     const arrString = string.split('');
-//     const carToDell = Number.stringLength - standartLength;
-//     const arrModif =  arrString.splice(standartLength -1,Number.carToDell,'...');
-//     const arrModifUnite = arrModif.join('');
-//         return arrModifUnite;
-//       }
-// }
+// const formatString = function(string) {
+//   const stringLength = string.length;
+//   // console.log('String Length :', stringLength);
+//   if (stringLength >= 40) {
+//     const newString = string.slice(0, 40);
+//     string = newString + "...";
+//   }
+//   return string;
+// };
 
-// console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
-// console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
-// console.log(formatString('Curabitur ligula sapien.'));
-// console.log(formatString('Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.'));
-
-
+// console.log(formatString("Curabitur ligula sapien, tincidunt non."));
+// console.log(formatString("Vestibulum facilisis, purus nec pulvinar iaculis."));
+// console.log(formatString("Curabitur ligula sapien."));
+// console.log(
+//   formatString(
+//     "Nunc sed turpis. Curabitur a felis in nunc fringilla tristique."
+//   )
+// );

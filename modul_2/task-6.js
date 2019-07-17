@@ -4,21 +4,21 @@
 
 // ==============
 
-// const checkForSpam = function(string) {
-//   let message = false;
-//   if (
-//     string.toLowerCase().includes("sale") ||
-//     string.toLowerCase().includes("spam")
-//   ) {
-//     message = true;
-//   }
-//   return message;
-// };
+const checkForSpam = function(string) {
+  let message = false;
+  if (
+    string.toLowerCase().includes("sale") ||
+    string.toLowerCase().includes("spam")
+  ) {
+    message = true;
+  }
+  return message;
+};
 
-// console.log(checkForSpam("Latest technology news"));
+console.log(checkForSpam("Latest technology news"));
 
-// console.log(checkForSpam("JavaScript weekly newsletter"));
+console.log(checkForSpam("JavaScript weekly newsletter"));
 
-// console.log(checkForSpam("Get best sale offers now!"));
+console.log(checkForSpam("Get best sale offers now!"));
 
-// console.log(checkForSpam("[SPAM] How to earn fast money?"));
+console.log(checkForSpam("[SPAM] How to earn fast money?"));

@@ -24,25 +24,25 @@
 
 // =======================
 
-const users =["Mango", "Poly", "Ajax", "Chelsey"];
-console.log(users.shift());
-console.log(users);
+// const users =["Mango", "Poly", "Ajax", "Chelsey"];
+// console.log(users.shift());
+// console.log(users);
 
-console.log(users.pop());
-console.log(users);
+// console.log(users.pop());
+// console.log(users);
 
-users.unshift("Lux");
-console.log(users);
+// users.unshift("Lux");
+// console.log(users);
 
-users.splice(3, 0, "Jay", "Kiwi");
-console.log(users);
+// users.splice(3, 0, "Jay", "Kiwi");
+// console.log(users);
 
-const userToDelete = "Ajax";
-console.log(users.splice(users.indexOf(userToDelete), 1));
-console.log(users);
+// const userToDelete = "Ajax";
+// console.log(users.splice(users.indexOf(userToDelete), 1));
+// console.log(users);
 
-const userToInsert = "Kong";
-const insertBefore = "Jay";
+// const userToInsert = "Kong";
+// const insertBefore = "Jay";
 
-users.splice(users.indexOf(insertBefore), 0, userToInsert);
-console.log(users);
+// users.splice(users.indexOf(insertBefore), 0, userToInsert);
+// console.log(users);

@@ -5,9 +5,9 @@
 // ===========================
 // const calculateEngravingPrice = function(string, pricePerWord) {
 //   const words = string.split(" ");
-//   const total = words.length * pricePerWord;
-//   // console.log(`Total amount of words equal ${words.length}, price ${total} US dollars`);
-//   return total;
+//   return words.length * pricePerWord;
+
+//   //   return string.split(" ").length * pricePerWord;
 // };
 
 // console.log(

@@ -12,11 +12,11 @@ class Storage {
   }
   removeItem(item) {
     // this.items = this.items.filter(items => items !== item);
-    for (const el of this.items) {
-      if (item === el) {
-        this.items.splice(this.items.indexOf(el), 1);
-      }
-    }
+    // for (const el of this.items) {
+    //   if (item === el) {
+    //     this.items.splice(this.items.indexOf(el), 1);
+    let index = this.items.indexOf(item);
+    this.items.splice(index, 1);
   }
 }
 const storage = new Storage([

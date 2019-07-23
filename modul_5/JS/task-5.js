@@ -28,7 +28,7 @@ class Car {
     this._speed += value;
   }
   decelerate(value) {
-    if (this._speed - value >= 0);
+    if (this._speed - value > 0);
     this._speed -= value;
   }
   drive(hours) {

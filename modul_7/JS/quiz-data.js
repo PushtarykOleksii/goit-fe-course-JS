@@ -1,6 +1,6 @@
 export default {
   title: "Тест на базовый уровень JavaScript.",
-  
+
   questions: [
     {
       question: "Что возвращает метод Array.prototype.filter()?",

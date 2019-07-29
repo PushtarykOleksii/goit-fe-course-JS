@@ -37,6 +37,9 @@ imgList.addEventListener("click", openModal);
 
 function openModal(event) {
   event.preventDefault();
+  if (event.target === event.currentTarget) {
+    return;
+  }
   lightboxButton.addEventListener("click", closeModal);
   window.addEventListener("keydown", handleKeyPress);
 

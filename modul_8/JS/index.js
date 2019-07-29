@@ -1,45 +1,73 @@
 import galleryItems from "./gallery-items.js";
 
-const button = document.querySelector(".button");
-const imgList = document.querySelector(".gallery");
+const imgList = document.querySelector("ul");
+const lightboxButton = document.querySelector(".lightbox__button");
+const lightboxImage = document.querySelector(".lightbox__image");
 
-const imgItem = document.createElement("li");
-imgItem.classList.add("gallery__item");
-const imgLink = document.createElement("a");
-imgLink.classList.add("gallery__link");
-const img = document.createElement("img");
-img.classList.add("gallery__image");
-const span = document.createElement("span");
-span.classList.add("gallery__icon");
-const i = document.createElement("i");
-i.classList.add("material-icons");
+function createGalery(galleryItems) {
+  let fragment = document.createDocumentFragment();
+  galleryItems.forEach(elem => {
+    const imgItem = document.createElement("li");
+    imgItem.classList.add("gallery__item");
+    const imgLink = document.createElement("a");
+    imgLink.classList.add("gallery__link");
+    imgLink.href = elem.original;
+    const img = document.createElement("img");
+    img.classList.add("gallery__image");
+    img.setAttribute("src", elem.preview);
+    img.setAttribute("data-source", elem.original);
+    img.setAttribute("alt", elem.description);
+    const span = document.createElement("span");
+    span.classList.add("gallery__icon");
+    const i = document.createElement("i");
+    i.classList.add("material-icons");
+    i.textContent = "zoom_out_map";
 
-galleryItems.forEach({galleryItems =>
-  
-});
+    span.append(i);
+    imgLink.append(img, span);
+    imgItem.append(imgLink);
+    fragment.append(imgItem);
+  });
+  imgList.append(fragment);
+}
 
+createGalery(galleryItems);
 
+imgList.addEventListener("click", openModal);
 
-// Необходимо динамически создать элементы галереи по указанному шаблону.
+function openModal(event) {
+  event.preventDefault();
+  lightboxButton.addEventListener("click", closeModal);
+  window.addEventListener("keydown", handleKeyPress);
 
-// При клике по элементу галереи должно открываться модальное окно с полноразмерным изображением. Обязательно используй делегирование событий и слушай клики на элементе ul.gallery.
+  const lightbox = document.querySelector(".lightbox");
+  lightbox.addEventListener("click", handleBackdropClick);
+  lightbox.classList.add("is-open");
 
-// Модальное окно должно закрываться по клику на кнопку button[data-action="close-modal"], по клику на div.overlay или по нажатию ESC.
+  function bigImageGet() {
+    lightboxImage.src = event.target.getAttribute(["data-source"]);
+    lightboxImage.alt = event.target.getAttribute(["alt"]);
+  }
+  bigImageGet();
+}
 
-// {/* <li class="gallery__item">
-//   <a
-//     class="gallery__link"
-//     href="https://cdn.pixabay.com/photo/2010/12/13/10/13/tulips-2546_1280.jpg"
-//   >
-//     <img
-//       class="gallery__image"
-//       src="https://cdn.pixabay.com/photo/2010/12/13/10/13/tulips-2546__340.jpg"
-//       data-source="https://cdn.pixabay.com/photo/2010/12/13/10/13/tulips-2546_1280.jpg"
-//       alt="Tulips"
-//     />
+function closeModal(event) {
+  const lightbox = document.querySelector(".lightbox");
+  lightbox.classList.remove("is-open");
+  window.removeEventListener("keydown", handleKeyPress);
+  lightboxButton.removeEventListener("click", handleKeyPress);
+  lightbox.removeEventListener("click", handleBackdropClick);
+}
 
-//     <span class="gallery__icon">
-//       <i class="material-icons">zoom_out_map</i>
-//     </span>
-//   </a>
-// </li> */}
+function handleBackdropClick(event) {
+  if (event.target === lightboxImage || event.target === lightboxButton) {
+    return;
+  }
+  closeModal();
+}
+function handleKeyPress(event) {
+  if (event.code !== "Escape") {
+    return;
+  }
+  closeModal();
+}

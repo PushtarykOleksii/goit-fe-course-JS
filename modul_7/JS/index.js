@@ -1,4 +1,5 @@
 import quizData from "./quiz-data.js";
+
 const button = document.querySelector("button");
 const form = document.querySelector(".form");
 const fragment = document.createDocumentFragment();

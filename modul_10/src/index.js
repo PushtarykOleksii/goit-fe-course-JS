@@ -9,8 +9,10 @@ const Theme = {
 const list = document.querySelector(".menu");
 const body = document.querySelector("body");
 const checkInput = document.querySelector(".switch__input");
+
 const setBefor = localStorage.getItem("class");
 const setAfter = JSON.parse(setBefor);
+
 if (setAfter === "dark-theme") {
   body.classList.add("dark-theme");
   checkInput.checked = true;

@@ -50,24 +50,12 @@ const taskQuestion = quizData.questions.map(el => {
 function submitButton(elem) {
   event.preventDefault();
   const answerArr = [];
-  // let inputs = form.elements.subscribtion.value;
-  let inputs = document.querySelectorAll('input[type="radio"]:checked');
+  
+  const inputs = document.querySelectorAll('input[type="radio"]:checked');
   [...inputs].map(el => answerArr.push(+el.value));
 
   compareAnsw(taskQuestion, answerArr);
 }
-
-// function submitButtonWithFormData(elem) {
-//   event.preventDefault();
-//   const answerArr = [];
-//   const formData = new FormData(form);
-//   const data = {};
-//   formData.forEach((value, name) => {
-//     data[name] = value;
-//   });
-//   [...formData].map(el => answerArr.push(+el.value));
-//   compareAnsw(taskQuestion, answerArr);
-// }
 
 function compareAnsw(taskQuestion, answerArr) {
   let counterWrightAnsw = 0;
@@ -75,20 +63,11 @@ function compareAnsw(taskQuestion, answerArr) {
   let prosentage;
   for (let i of taskQuestion) {
     if (i === answerArr[testCheck]) {
-      // section.classList.add(section__wright);
       counterWrightAnsw += 1;
-    // } else {
-    //   section.classList.add(section__wrong);
     }
     testCheck += 1;
   }
-  // for (let i of taskQuestion) {
-  //   if (i === answerArr[testCheck]) {
-  //     counterWrightAnsw += 1;
-  //   }
-  //   testCheck += 1;
-  // }
-
+  
   prosentage = (counterWrightAnsw / taskQuestion.length) * 100;
   if (answerArr.length < taskQuestion.length) {
     return (result.textContent = `You have to check all questions!`);
@@ -101,7 +80,7 @@ function compareAnsw(taskQuestion, answerArr) {
   } else {
     return (result.textContent = `Your have only ${Math.round(
       prosentage
-    )}% of right answers, try again! Wright ${counterWrightAnsw}, Wrong ${taskQuestion.length -
+    )}% of right answers, try again! Right ${counterWrightAnsw}, Wrong ${taskQuestion.length -
       counterWrightAnsw}`);
   }
 }

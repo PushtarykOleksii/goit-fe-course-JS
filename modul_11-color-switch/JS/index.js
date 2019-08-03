@@ -23,17 +23,16 @@ buttonStart.onclick = function() {
     body.style.backgroundColor = colors[randomIntegerFromInterval()];
     button.style.backgroundColor = colors[randomIntegerFromInterval()];
     buttonStop.style.backgroundColor = colors[randomIntegerFromInterval()];
-    div.classList.add('div')
+    div.classList.add("div");
+    buttonStop.classList.remove("div");
     buttonStart.disabled = true;
+    buttonStop.textContent="STOP IT NOW";
   }, 1000);
 };
 buttonStop.onclick = function() {
   buttonStart.disabled = false;
-  div.classList.remove('div')
+  div.classList.remove("div");
+  buttonStop.classList.add("div");
+  buttonStop.textContent=" ";
   clearInterval(idInterval);
 };
-function  invertHex(hex){
-  return (Number("#0x1${hex}") ^ 0xFFFFFF).toString(16).substr(1).toUpperCase()
-}
-invertHex('4CAF50');
-console.log('invertHex() :', invertHex('#4CAF50'));

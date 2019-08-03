@@ -10,17 +10,17 @@ body{
 }
 .list{
     
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 .button{
     margin: 0;
     padding: 0;
     border: 3px solid rgb(53, 245, 5);
     outline: none;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     color: black;
     font-size: 30px;
     border-radius: 50%;
@@ -30,7 +30,7 @@ body{
     margin-bottom: 30px
 }
 .div{
-width:700px;
+width:600px;
 height: 500px;
 background-image: url(https://i.ytimg.com/vi/RNoHcWE8tbQ/maxresdefault.jpg);
 background-size: cover;

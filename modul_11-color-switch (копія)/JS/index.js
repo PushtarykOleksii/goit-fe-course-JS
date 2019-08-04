@@ -1,4 +1,4 @@
-
+// import '../stiles.css';
 const button = document.querySelector(".button");
 const buttonStart = document.querySelector(".button-start");
 const buttonStop = document.querySelector(".button-stop");
@@ -31,6 +31,8 @@ buttonStart.onclick = function() {
 };
 buttonStop.onclick = function() {
   buttonStart.disabled = false;
+  div.classList.remove("div");
+  buttonStop.classList.add("div");
+  buttonStop.textContent=" ";
   clearInterval(idInterval);
-  buttonStop.textContent="Stop";
 };

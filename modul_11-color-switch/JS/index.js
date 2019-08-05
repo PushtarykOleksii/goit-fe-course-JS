@@ -26,11 +26,9 @@ buttonStart.onclick = function() {
     div.classList.add("div");
     buttonStop.classList.remove("div");
     buttonStart.disabled = true;
-    buttonStop.textContent="STOP IT NOW";
   }, 1000);
 };
 buttonStop.onclick = function() {
   buttonStart.disabled = false;
   clearInterval(idInterval);
-  buttonStop.textContent="Stop";
 };

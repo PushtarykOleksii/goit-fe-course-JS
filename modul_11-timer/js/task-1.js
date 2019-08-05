@@ -1,35 +1,44 @@
-// Таймер обратного отсчета
-// Создай плагин настраиваемого таймера, который ведет обратный отсчет до предварительно определенной даты. Такой плагин может использоваться в блогах и интернет-магазинах, страницах регистрации событий, во время технического обслуживания и т. д.
 
-// Плагин ожидает следующую HTML-разметку и показывает четыре цифры: дни, часы, минуты и секунды в формате XX:XX:XX:XX. Количество дней может состоять из более чем двух цифр.
-
-// Плагин это класс CountdownTimer, экземпляр которого создает новый таймер с настройками.
-
-// new CountdownTimer({
-//   selector: "#timer-1",
-//   new Date("Aug 9, 2030").getTime();
-// });
-
-let targetDate = new Date("Aug 31, 2019").getTime();
-
-let timer = setInterval(function() {
-  let nowDate = new Date().getTime();
-  let timeRemain = targetDate - nowDate;
-
-  if (timeRemain > 0) {
-    const days = Math.floor(timeRemain / (1000 * 60 * 60 * 24));
-    const hours = pad(Math.floor((timeRemain % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-    const mins = pad(Math.floor((timeRemain % (1000 * 60 * 60)) / (1000 * 60)));
-    const secs = pad(Math.floor((timeRemain % (1000 * 60)) / 1000));
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("mins").innerHTML = mins;
-    document.getElementById("secs").innerHTML = secs;
-  } else {
-    document.getElementById("timer-1").innerHTML = "Action is done! Buy!";
+class CountdownTimer {
+  constructor({ selector, targetDate }) {
+    this.targetDate = targetDate;
+    this.target = document.querySelector(selector);
+    this.initialTimer();
   }
-}, 1000);
 
-function pad(value) {
-  return String(value).padStart(2, "0");
+  initialTimer() {
+    function pad(value) {
+      return String(value).padStart(2, "0");
+    }
+    let targetDate = this.targetDate.getTime();
+    let timer = setInterval(function(target) {
+      let nowDate = new Date().getTime();
+      let timeRemain = targetDate - nowDate;
+
+      if (timeRemain > 0) {
+        const days = Math.floor(timeRemain / (1000 * 60 * 60 * 24));
+        const hours = pad(
+          Math.floor((timeRemain % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+        );
+        const mins = pad(
+          Math.floor((timeRemain % (1000 * 60 * 60)) / (1000 * 60))
+        );
+        const secs = pad(Math.floor((timeRemain % (1000 * 60)) / 1000));
+        console.log('target :', target);
+        target.querySelector("#days").textContent = days;
+        target.querySelector("#hours").textContent = hours;
+        target.querySelector("#mins").textContent = mins;
+        target.querySelector("#secs").textContent = secs;
+      } else {
+        target.innerHTML = "Action is done! Buy!";
+        clearInterval(timer);
+      }
+    }, 1000, this.target);
+  }
 }
+
+new CountdownTimer({
+  selector: "#timer-1",
+  targetDate: new Date("Aug 9, 2020")
+});
+

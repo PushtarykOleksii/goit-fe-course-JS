@@ -24,7 +24,6 @@ class CountdownTimer {
           Math.floor((timeRemain % (1000 * 60 * 60)) / (1000 * 60))
         );
         const secs = pad(Math.floor((timeRemain % (1000 * 60)) / 1000));
-        console.log('target :', target);
         target.querySelector("#days").textContent = days;
         target.querySelector("#hours").textContent = hours;
         target.querySelector("#mins").textContent = mins;

@@ -1,5 +1,5 @@
 
-const baseUrl2 = "http://api.apixu.com/v1";
+const baseUrl2 = "https://api.apixu.com/v1";
 const curentWeather = "/current.json";
 const requestParam = "?key=ea948e5e9c4e48f3a35170457190608&lang=uk";
 

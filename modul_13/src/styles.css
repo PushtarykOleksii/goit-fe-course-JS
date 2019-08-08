@@ -1,0 +1,47 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  list-style: none;
+
+}
+.stats{
+  display: flex;
+}
+.body{
+  background-color: whitesmoke;
+}
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 100%;
+}
+.picture {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+.load_more {
+  background-color: teal;
+  width: 150px;
+  height: 30px;
+  outline: none;
+  border: none;
+}
+.go_up {
+  background-color: teal;
+  width: 150px;
+  height: 30px;
+  outline: none;
+  border: none;
+}
+
+.stats-item {
+  padding-left: 20px;
+  margin-right: 20px;
+}

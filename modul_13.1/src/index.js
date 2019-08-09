@@ -58,7 +58,7 @@ function serchPicturesInput(e) {
         dir1: "down",
         dir2: "right", //  from the top left corner.
         firstpos1: 600,
-        firstpos2: 600 // 90px from the top, 90px from the left.
+        firstpos2: 680 // 90px from the top, 90px from the left.
       }
     });
     window.scrollBy({

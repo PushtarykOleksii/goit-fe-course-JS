@@ -28,6 +28,7 @@ html {
   width: 400px;
   height: 300px;
   object-fit: cover;
+  border-radius: 4px;
   
 }
 .stats-button {
@@ -42,6 +43,7 @@ html {
   flex-direction: row;
   justify-content: center;
   margin-bottom: 20px;
+  
 }
 .load_more {
   background-color: teal;
@@ -51,6 +53,9 @@ html {
   border: none;
   margin-right: 10px;
   cursor: pointer;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 20px;
 }
 .go_up {
   background-color: teal;
@@ -59,9 +64,11 @@ html {
   outline: none;
   border: none;
   cursor: pointer;
+  height: 40px;
+  border-radius: 4px;
 }
 .unvisible {
-  visibility: hidden;
+  display: none;
 }
 .stats-item {
   display: flex;
@@ -89,6 +96,7 @@ html {
   font-weight: bold;
   font-size: 15px;
   border-radius: 3px;
+  text-transform:uppercase;
 }
 .material-icons{
   color: teal;
@@ -100,4 +108,7 @@ html {
 .pict_item {
   box-shadow: 3px 2px 20px -5px rgba(0,0,0,0.35);
   margin-bottom: 10px;
+}
+.material-icons .icon{
+  color: black;
 }

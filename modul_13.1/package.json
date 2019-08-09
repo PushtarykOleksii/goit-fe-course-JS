@@ -47,6 +47,7 @@
     "webpackbar": "^3.2.0"
   },
   "dependencies": {
+    "@material/textfield": "^3.1.0",
     "basiclightbox": "^5.0.2",
     "core-js": "^3.1.4",
     "handlebars": "^4.1.2",

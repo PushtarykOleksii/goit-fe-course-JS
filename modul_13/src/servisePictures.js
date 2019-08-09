@@ -12,7 +12,6 @@ export default {
       .then(response => response.json())
       .then(parseResponse => {
         this.incrementPage();
-
         return parseResponse.hits;
       });
   },
@@ -27,5 +26,5 @@ export default {
   },
   resetPage() {
     this.page = 1;
-  }
+  } 
 };

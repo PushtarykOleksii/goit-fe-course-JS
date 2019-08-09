@@ -1,24 +1,36 @@
-
 {{#each this}}
 <li class="pict_item">
     <div class="photo-card">
-        <img class="picture" src="{{webformatURL}}" alt="{{tags}}" width="{{previewWidth}}" height="{{previewHeight}}" />
+        {{!-- <a href="{{largeImageURL}}" target="_blank" rel="noopener noreferrer"> --}}
+        <img class="picture" data-sourse="{{largeImageURL}}" src="{{webformatURL}}" alt="{{tags}}"
+            width="{{previewWidth}}" height="{{previewHeight}}" />
+        {{!-- </a> --}}
         <div class="stats">
+
             <p class="stats-item">
-                <i class="material-icons">thumb_up</i>
-                {{likes}}
+                <button class="stats-button" >
+                    <i class="material-icons">thumb_up</i>
+                </button>
+                    {{likes}}
+            </p>
+
+            <p class="stats-item">
+                <button class="stats-button">
+                    <i class="material-icons">visibility</i>
+                </button>
+                    {{views}}
             </p>
             <p class="stats-item">
-                <i class="material-icons">visibility</i>
-                {{views}}
+                <button class="stats-button">
+                    <i class="material-icons">comment</i>
+                </button>
+                    {{comments}}
             </p>
             <p class="stats-item">
-                <i class="material-icons">comment</i>
-                {{comments}}
-            </p>
-            <p class="stats-item">
-                <i class="material-icons">cloud_download</i>
-                {{downloads}}
+                <button class="stats-button">
+                    <i class="material-icons">cloud_download</i>
+                </button>
+                    {{downloads}}
             </p>
         </div>
     </div>

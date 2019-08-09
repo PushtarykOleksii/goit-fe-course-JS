@@ -7,24 +7,41 @@ html {
 *::after {
   box-sizing: inherit;
   list-style: none;
-
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
 }
-.stats{
+.stats {
   display: flex;
 }
-.body{
+.body {
   background-color: whitesmoke;
 }
 .gallery {
   display: flex;
   flex-flow: row wrap;
   max-width: 100%;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
 }
 .picture {
   width: 400px;
   height: 300px;
   object-fit: cover;
-  margin-right: 10px;
+  
+}
+.stats-button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 30px;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 .load_more {
   background-color: teal;
@@ -32,6 +49,8 @@ html {
   height: 30px;
   outline: none;
   border: none;
+  margin-right: 10px;
+  cursor: pointer;
 }
 .go_up {
   background-color: teal;
@@ -39,9 +58,46 @@ html {
   height: 30px;
   outline: none;
   border: none;
+  cursor: pointer;
 }
-
+.unvisible {
+  visibility: hidden;
+}
 .stats-item {
-  padding-left: 20px;
-  margin-right: 20px;
+  display: flex;
+  padding-left: 10px;
+  margin-right: 10px;
+  align-items: center;
+  height: 50px;
+  
+}
+.search-form{
+  
+  padding-top: 10px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.input {
+  background: gold;
+  height: 30px;
+  border: none;
+  padding: 5px;
+  outline: none;
+  color: blue;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 3px;
+}
+.material-icons{
+  color: teal;
+  transition:all .2s;
+}
+.material-icons:hover{
+  color: lightcoral;
+}
+.pict_item {
+  box-shadow: 3px 2px 20px -5px rgba(0,0,0,0.35);
+  margin-bottom: 10px;
 }

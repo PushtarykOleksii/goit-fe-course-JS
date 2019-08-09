@@ -12,7 +12,8 @@ const refs = {
     temp: document.querySelector(".temp"),
     humidity: document.querySelector(".humidity"),
     wind: document.querySelector(".wind"),
-    conditions: document.querySelector(".conditions")
+    conditions: document.querySelector(".conditions"),
+    spinner: document.querySelector(".spinner")
   };
 
 export default function fetchWeather(query) {

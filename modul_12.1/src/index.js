@@ -1,8 +1,8 @@
 import "./styles.css";
-import 'pnotify/src/PNotifyBrightTheme.css';
+import "pnotify/src/PNotifyBrightTheme.css";
 import fetchWeather from "./fetchWeather.js";
 import getCurrentPosition from "./getGeoPosition.js";
-import PNotify from 'pnotify/dist/es/PNotify.js';
+import PNotify from "pnotify/dist/es/PNotify.js";
 const serchForm = document.querySelector(".search-form");
 
 // refs.button.addEventListener("click", findWeatherDetails);
@@ -13,32 +13,34 @@ function handlerFormSubmit(e) {
   const input = e.currentTarget.elements.city.value;
   console.log("input :", input);
   fetchWeather(input);
+  // refs.spinner.classList.remove("spinner");
 }
-
 
 getCurrentPosition()
   .then(location => {
     const query = `${location.coords.latitude}, ${location.coords.longitude}`;
     fetchWeather(query);
     console.log(location);
+    // refs.spinner.classList.remove("spinner");
     PNotify.success({
-        text:  "Hello!",
-        stack: {
-          dir1: 'down', dir2: 'right', //  from the top left corner.
-          firstpos1: 600, firstpos2: 600 // 90px from the top, 90px from the left.
-        }
+      text: "Hello!",
+      stack: {
+        dir1: "down",
+        dir2: "right", //  from the top left corner.
+        firstpos1: 600,
+        firstpos2: 600 // 90px from the top, 90px from the left.
       }
-     
-    );
+    });
   })
   .catch(error => {
+    // refs.spinner.classList.remove("spinner");
     PNotify.error({
-        text:  "Нет прав доступа к геопозиции, используйте поиск по имени города.",
-        stack: {
-          dir1: 'down', dir2: 'right', //  from the top left corner.
-          firstpos1: 600, firstpos2: 600 // 90px from the top, 90px from the left.
-        }
+      text: "Нет прав доступа к геопозиции, используйте поиск по имени города.",
+      stack: {
+        dir1: "down",
+        dir2: "right", //  from the top left corner.
+        firstpos1: 600,
+        firstpos2: 600 // 90px from the top, 90px from the left.
       }
-     
-    );
+    });
   });

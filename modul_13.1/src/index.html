@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
   </head>
+ 
   <body class="body">
     <form class="search-form" id="search-form">
       <input
@@ -19,13 +20,16 @@
         autocomplete="off"
         placeholder="Search images... &crarr;"
       />
+      <button class="load">Load</button>
     </form>
+    
     <ul class="gallery"></ul>
     <div class="buttons">
-      <button class="load_more unvisible">Load More</button>
-      <button class="go_up unvisible material-icons">
+      <button class="load_more invisible">Load More</button>
+      <button class="go_up invisible material-icons">
         <i class="material-icons icon">arrow_upward</i>
       </button>
+      <div class="lds-ripple modale"><div></div><div></div></div>
     </div>
   </body>
 </html>

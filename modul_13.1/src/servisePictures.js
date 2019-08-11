@@ -13,10 +13,12 @@ export default {
       .then(parseResponse => {
         this.incrementPage();
         return parseResponse.hits;
+       
       });
   },
   get serchQuery() {
     return this.query;
+    
   },
   set serchQuery(string) {
     this.query = string;

@@ -18,7 +18,8 @@ const refs = {
   goUpButoon: document.querySelector(".go_up"),
   input: document.querySelector(".input"),
   pictureItem: document.querySelector(".pict_item"),
-  unvisible: document.querySelector(".unvisible")
+  invisible: document.querySelector(".invisible"),
+  spinner: document.querySelector(".lds-ripple")
 };
 refs.gallery.addEventListener("click", clickUl);
 refs.inputForm.addEventListener("submit", serchPicturesInput);
@@ -47,8 +48,8 @@ function serchPicturesInput(e) {
   servisePictures.resetPage();
 
   servisePictures.serchQuery = inputValue;
-  refs.loadMoreButton.classList.remove("unvisible");
-  refs.goUpButoon.classList.remove("unvisible");
+  refs.loadMoreButton.classList.remove("invisible");
+  refs.goUpButoon.classList.remove("invisible");
   servisePictures.fetchPictures().then(hits => {
     const markup = buildListPictures(hits);
     insertListItems(markup);
@@ -61,13 +62,9 @@ function serchPicturesInput(e) {
         firstpos2: 680 // 90px from the top, 90px from the left.
       }
     });
-    window.scrollBy({
-      top: window.innerHeight,
-      behavior: "smooth"
-    });
+    
   });
   input.value = "";
-  
 }
 function goUpButtonHendler() {
   window.scrollTo({
@@ -79,7 +76,12 @@ function insertListItems(items) {
   refs.gallery.insertAdjacentHTML("beforeend", items);
 }
 
+function buildListPictures(items) {
+  return picturesTemplate(items);
+}
+
 function loadMoreButtonHendler() {
+  refs.spinner.classList.add("opened");
   servisePictures.fetchPictures().then(hits => {
     const markup = buildListPictures(hits);
     insertListItems(markup);
@@ -87,10 +89,8 @@ function loadMoreButtonHendler() {
       top: window.innerHeight,
       behavior: "smooth"
     });
+    refs.spinner.classList.remove("opened");
   });
-}
-function buildListPictures(items) {
-  return picturesTemplate(items);
 }
 function clearList() {
   refs.gallery.innerHTML = "";
